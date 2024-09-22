@@ -19,6 +19,14 @@ const Login = () => {
     };
 
     const handleLogin = async (e) => {
+        if (!username) {
+            toast.error('Please enter a username');
+            return;
+        }
+        if (!password) {
+            toast.error('Please enter a password'); 
+            return;
+        }
         e.preventDefault();
         setLoading(true);
         try {

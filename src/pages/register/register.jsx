@@ -20,8 +20,28 @@ const Register = () => {
     };
 
     const handleRegister = async (e) => {
+        function validatePhoneNumber(phone) {
+            const phoneRegex = /^\d{10}$/;
+            return phoneRegex.test(phone);
+        }
+    
+        // Input validation
+        if (!username) {
+            toast.error('Please enter a username');
+            return;
+        }
+        if (!validatePhoneNumber(phoneNumber)) { // Ensure you're checking the correct variable
+            toast.error('Please enter a valid phone number');
+            return;
+        }
+        if (!password) {
+            toast.error('Please enter a password'); // Corrected message
+            return;
+        }
+    
         e.preventDefault();
         setLoading(true);
+    
         try {
             const response = await axios.post('https://elderlychild.onrender.com/signin', {
                 username,
