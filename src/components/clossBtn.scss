@@ -1,0 +1,15 @@
+/* closeButton.scss */
+.close-button {
+  position: absolute;
+  top: 20px; /* Distance from the top */
+  right: 20px; /* Distance from the right */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close-button svg {
+  width: 24px;
+  height: 24px;
+  color: #000000; /* Change color as needed */
+}

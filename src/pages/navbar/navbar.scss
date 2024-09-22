@@ -1,0 +1,164 @@
+// Variables
+$primary-color: #4c6a31;
+$secondary-color: #6c757d;
+$navbar-bg: #ffffff;
+$navbar-text-color: #333;
+$navbar-border-color: #ddd;
+$navbar-btn-bg: #4c6a31;
+$navbar-btn-hover-bg: darken($primary-color, 10%);
+$side-nav-width: 250px;
+$transition-speed: 0.4s;
+
+// Main navbar container
+.navbar {
+  background-color: $navbar-bg;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid $navbar-border-color;
+  position: relative;
+  z-index: 1000;
+ 
+
+  a{
+    text-decoration: none;
+
+  }
+
+  .navbar-logo h1 {
+    font-size: 34px;
+    color: $primary-color;
+    font-weight: bold;
+    transition: color $transition-speed, transform $transition-speed;
+
+    // Grow the logo on hover
+    &:hover {
+      color: lighten($primary-color, 10%);
+      transform: scale(1.1);
+    }
+  }
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    transition: opacity $transition-speed;
+    gap: 50px;
+
+    li {
+      margin-right: 20px;
+
+      a {
+        text-decoration: none;
+        color: $navbar-text-color;
+        font-size: 20px;
+        position: relative;
+        padding-bottom: 5px;
+        transition: color $transition-speed;
+
+        // Animated underline effect
+        &::before {
+          content: '';
+          position: absolute;
+          width: 0%;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: $primary-color;
+          transition: width $transition-speed;
+        }
+
+        &:hover {
+          color: lighten($primary-color, 10%);
+
+          // Animate underline on hover
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .sign-in-btn {
+      background-color: $navbar-btn-bg;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color $transition-speed, transform $transition-speed;
+
+      &:hover {
+        background-color: $navbar-btn-hover-bg;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: $navbar-text-color;
+      transition: background-color $transition-speed;
+    }
+
+    &:hover span {
+      background-color: $primary-color;
+    }
+  }
+
+  // Responsive design for smaller screens
+  @media (max-width: 768px) {
+    ul {
+      display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    // Side navigation
+    .navbar-links {
+      position: fixed;
+      top: 0;
+      right: -$side-nav-width;
+      width: $side-nav-width;
+      height: 100%;
+      background-color: $navbar-bg;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: right $transition-speed;
+
+      li {
+        margin-bottom: 20px;
+
+        a {
+          font-size: 20px;
+          color: $navbar-text-color;
+          display: block;
+        }
+      }
+
+      &.open {
+        right: 0;
+      }
+    }
+
+    .hamburger.open {
+      span {
+        background-color: $primary-color;
+      }
+    }
+  }
+}

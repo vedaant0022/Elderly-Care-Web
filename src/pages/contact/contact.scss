@@ -1,0 +1,118 @@
+// Variables
+$primary-color: #4c6a31;
+$secondary-color: #6c757d;
+$font-family: 'Arial', sans-serif;
+$btn-bg: #ffffff;
+$btn-border-color: #ddd;
+$btn-text-color: #333;
+$btn-hover-bg: adjust-color($btn-bg, $lightness: -10%);
+$btn-active-bg: adjust-color($primary-color, $lightness: -10%);
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: $font-family;
+
+  .about-header {
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 2px solid #e0e0e0;
+  }
+
+  // Button container next to About Us
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 10px;
+
+    button {
+      background-color: $btn-bg;
+      color: $btn-text-color;
+      border: 1px solid $btn-border-color;
+      padding: 8px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+
+      &:hover {
+        background-color: lighten($primary-color, 20%);
+        color: $primary-color;
+      }
+
+      &:active {
+        background-color: $btn-active-bg;
+        color: #fff;
+        border-color: adjust-color($primary-color, $lightness: -15%);
+        background-color: lighten($primary-color, 20%);
+        color: $primary-color;
+      }
+    }
+  }
+
+  // Card container
+  .about-card {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+
+    // Individual card style
+    .card {
+      background-color: #f9f9f9;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 30%;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .card-icon {
+        margin-bottom: 20px;
+        svg {
+          fill: $primary-color;
+        }
+      }
+
+      h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      p {
+        font-size: 16px;
+        color: #666;
+      }
+    }
+  }
+
+  // Responsive styles
+  @media (max-width: 768px) {
+    .about-card {
+      flex-direction: column;
+      align-items: center;
+
+      .card {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+    }
+
+    .btn-group {
+      flex-direction: column;
+      align-items: center;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

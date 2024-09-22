@@ -1,0 +1,120 @@
+// Variables
+$primary-color: #4c6a31;
+$secondary-color: #6c757d;
+$font-family: 'Arial', sans-serif;
+$btn-bg: #ffffff;
+$btn-border-color: #ddd;
+$btn-text-color: #333;
+$btn-hover-bg: adjust-color($btn-bg, $lightness: -10%);
+$btn-active-bg: adjust-color($primary-color, $lightness: -10%);
+
+.about-container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: $font-family;
+
+  .about-header {
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Times New Roman', Times, serif;
+
+    h1 {
+      font-size: 65px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .titel {
+    margin: 0 10%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    h2 {
+      font-size: 30px;
+    }
+  }
+
+  .about-story {
+    border-top: 5px solid #e0e0e0;
+   // Ensure it's aligned with the rest of the content
+
+    h2 {
+      font-size: 32px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    p {
+      font-size: 18px;
+      color: $secondary-color;
+      line-height: 1.6;
+      text-align: justify; // Justify the theory part
+    }
+  }
+
+  // Button container next to About Us
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 10px;
+    align-content: center;
+    flex-wrap: wrap;
+
+    button {
+      background-color: $btn-bg;
+      color: $btn-text-color; // Default text color
+      border: 1px solid $btn-border-color;
+      padding: 8px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; // Add transition for color
+      border-radius: 20px;
+
+      &:hover {
+        background-color: lighten($primary-color, 20%);
+        color: white; // Text changes to white on hover
+      }
+    }
+
+    .details-btn {
+      background-color: lighten($primary-color, 20%);
+      color: $primary-color;
+    }
+  }
+
+  // Responsive styles
+  @media (max-width: 768px) {
+    .about-header {
+      h1 {
+        font-size: 56px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    .about-story {
+      h2 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 16px;
+        text-align: justify; // Still justify the text in smaller screens
+      }
+    }
+
+    .btn-group {
+      display: block;
+      width: 150px;
+      margin-top: 20px; // Add margin to create spacing between the About Us content and buttons
+      
+      button {
+        width: 100%; // Buttons will take full width
+      }
+    }
+  }
+}

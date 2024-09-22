@@ -1,0 +1,29 @@
+.profile-content{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+h1{
+  border-bottom: 3px solid grey;
+}
+
+p{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+button{
+  max-width: 150px;
+  border-radius: 20px;
+  background-color: greenyellow;
+
+
+  :hover{
+    background-color: rgb(81, 116, 28);
+
+  }
+}
+
+
+}

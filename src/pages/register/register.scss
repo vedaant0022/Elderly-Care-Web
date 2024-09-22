@@ -1,0 +1,112 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+.background {
+  background-image: url('../../../public/images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 500px;
+  height: 650px;
+  border-radius: 15px;
+  box-shadow: 4px 7px 13px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin: 70px;
+}
+
+.card-top {
+  background-image: url('../../../public/images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 20px;
+  height: 280px;
+  position: relative;
+}
+
+.card-top-text {
+  margin-top: 150px;
+  font-size: 14px;
+}
+
+.card-top-button {
+  background-color: #fefefe;
+  color: #000000;
+  border: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.card-top-button:hover {
+  background-color: #e0e0e0;
+}
+
+.card-bottom {
+  padding: 20px;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border 0.3s;
+}
+
+.input-field:focus {
+  border-color: #426B1F;
+  outline: none;
+}
+
+.card-bottom-btn {
+  background-color: #426B1F;
+  color: #ffffff;
+  border: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 80%;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.card-bottom-btn:hover {
+  background-color: #429f42;
+  transform: translateY(-2px);
+}
+
+h1 {
+  color: #000000;
+  margin-bottom: 20px;
+  margin-top: 15px;
+  font-weight: bolder;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.forgot-password {
+  color: #666666;
+  margin-top: 20px;
+  font-size: 14px;
+}

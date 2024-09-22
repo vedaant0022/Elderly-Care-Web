@@ -1,0 +1,121 @@
+// Variables
+$primary-color: #4c6a31;
+$secondary-color: #6c757d;
+$font-family: 'Arial', sans-serif;
+$btn-bg: #ffffff;
+$btn-border-color: #ddd;
+$btn-text-color: #333;
+$btn-hover-bg: adjust-color($btn-bg, $lightness: -10%);
+$btn-active-bg: adjust-color($primary-color, $lightness: -10%);
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: $font-family;
+  
+
+  .faq-header {
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px solid #e0e0e0;
+  font-family: 'Times New Roman', Times, serif;
+
+   
+
+  
+  }
+  .faq-titel{
+    border-bottom: 4px solid #e0e0e0;
+
+     h1{
+      font-size: 38px;
+      margin-bottom: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+     }
+  }
+
+  .faq-story {
+
+    h2 {
+
+      font-size: 32px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      color: #0f3e10;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+    }
+
+    p {
+      font-size: 20px;
+      color: $secondary-color;
+      line-height: 1.6;
+    }
+  }
+
+  // Button container next to About Us
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 10px;
+
+    button {
+      background-color: $btn-bg;
+      color: $btn-text-color;
+      border: 1px solid $btn-border-color;
+      padding: 8px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+
+      &:hover {
+        background-color: lighten($primary-color, 20%);
+        color: $primary-color;
+      }
+
+      &:active {
+        background-color: $btn-active-bg;
+        color: #fff;
+        border-color: adjust-color($primary-color, $lightness: -15%);
+        background-color: lighten($primary-color, 20%);
+        color: $primary-color;
+      }
+    }
+
+    
+  }
+
+  // Responsive styles
+  @media (max-width: 768px) {
+   
+
+    .faq-story {
+      h1 {
+        font-size: 36px;
+      }
+      h2 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    .btn-group {
+      flex-direction: column;
+      align-items: center;
+      
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
